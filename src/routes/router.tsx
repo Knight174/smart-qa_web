@@ -1,28 +1,22 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { RedirectQ1 } from "../components/RedirectQ1";
+import { MainLayout } from "../layouts/MainLayout";
+import { QuestionLayout } from "../layouts/QuestionLayout";
+import { Question1 } from "../pages/Question1";
+import { Question2 } from "../pages/Question2";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <Outlet />
-      </div>
-    ),
+    element: <MainLayout />,
     errorElement: <RedirectQ1 />,
     children: [
-      { index: true, element: <h2>null</h2> }, // 默认路径，路径为 /
       {
         path: "questions",
-        element: (
-          <div>
-            <Outlet />
-          </div>
-        ),
+        element: <QuestionLayout />,
         children: [
-          { index: true, element: <h2>null</h2> },
-          { path: "1", element: <div>question 1</div> },
-          { path: "2", element: <div>question 2</div> },
+          { path: "1", element: <Question1 /> },
+          { path: "2", element: <Question2 /> },
         ],
       },
     ],
