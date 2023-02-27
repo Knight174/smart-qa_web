@@ -3,19 +3,18 @@ import ReactDOM from "react-dom/client";
 // import App from './App';
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { ErrorPage } from "./components/ErrorPage";
+// import { ErrorPage } from "./components/ErrorPage";
+import { RedirectQ1 } from "./components/RedirectQ1";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        {/* <h1>问题</h1>
-        <h2>Please select your answer in 60 seconds.</h2> */}
         <Outlet />
       </div>
     ),
-    errorElement: <ErrorPage />,
+    errorElement: <RedirectQ1 />,
     children: [
       { index: true, element: <h2>null</h2> }, // 默认路径，路径为 /
       {

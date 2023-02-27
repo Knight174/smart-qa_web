@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { useRouteError } from "react-router-dom";
 
 export const ErrorPage: React.FC = () => {
@@ -14,4 +14,4 @@ export const ErrorPage: React.FC = () => {
       </p>
     </div>
   );
-}
+};
