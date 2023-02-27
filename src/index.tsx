@@ -1,42 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from './App';
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-// import { ErrorPage } from "./components/ErrorPage";
-import { RedirectQ1 } from "./components/RedirectQ1";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <div>
-        <Outlet />
-      </div>
-    ),
-    errorElement: <RedirectQ1 />,
-    children: [
-      { index: true, element: <h2>null</h2> }, // 默认路径，路径为 /
-      {
-        path: "questions",
-        element: (
-          <div>
-            <Outlet />
-          </div>
-        ),
-        children: [
-          { index: true, element: <h2>null</h2> },
-          { path: "1", element: <div>question 1</div> },
-          { path: "2", element: <div>question 2</div> },
-        ],
-      },
-    ],
-  },
-  {
-    path: "/a",
-    element: <div>A</div>,
-  },
-]);
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/router";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
