@@ -10,16 +10,27 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div>
-        <h1>root</h1>
+        {/* <h1>问题</h1>
+        <h2>Please select your answer in 60 seconds.</h2> */}
         <Outlet />
       </div>
     ),
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <h2>请选择 1，2，3</h2> }, // 默认路径，路径为 /
-      { path: "1", element: <div>1</div> }, // 路径为 /1
-      { path: "2", element: <div>2</div> }, // 路径为 /2
-      { path: "3", element: <div>3</div> }, // 路径为 /3
+      { index: true, element: <h2>null</h2> }, // 默认路径，路径为 /
+      {
+        path: "questions",
+        element: (
+          <div>
+            <Outlet />
+          </div>
+        ),
+        children: [
+          { index: true, element: <h2>null</h2> },
+          { path: "1", element: <div>question 1</div> },
+          { path: "2", element: <div>question 2</div> },
+        ],
+      },
     ],
   },
   {
