@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
       {
         path: "",
         index: true,
-        element: <h1>Hello QA</h1>,
+        element: <h1 className="text-3xl font-bold underline">Hello QA</h1>,
       },
       questionRoutes,
     ],
